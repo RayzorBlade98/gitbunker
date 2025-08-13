@@ -1,0 +1,32 @@
+{
+  "name": "git-storage",
+  "version": "0.0.1",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "bin": {
+    "git-storage": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsup"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RayzorBlade98/git-storage.git"
+  },
+  "author": "RayzorBlade98",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RayzorBlade98/git-storage/issues"
+  },
+  "homepage": "https://github.com/RayzorBlade98/git-storage#readme",
+  "description": "",
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.2"
+  }
+}
