@@ -5,7 +5,7 @@ import { getEncryptedSaveDirPath, getSaveDirPath } from '..';
 
 export async function commitSaveData(config: Config): Promise<void> {
   const commitMessage = await enterCommitMessage();
-  await simpleGit(getSaveDirPath(config)).add('./*').commit(commitMessage);
+  await simpleGit(getSaveDirPath(config)).add('.').commit(commitMessage);
   console.log(`Successfully created commit ${commitMessage}`);
 }
 
