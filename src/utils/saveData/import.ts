@@ -56,7 +56,7 @@ async function importPath(
     try {
       const savePathDir = dirname(savePath);
       if (!existsSync(savePathDir)) {
-        mkdir(savePathDir, { recursive: true });
+        await mkdir(savePathDir, { recursive: true });
       }
 
       await copyFile(pathToImport, savePath);
