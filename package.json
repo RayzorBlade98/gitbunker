@@ -24,7 +24,14 @@
     "url": "https://github.com/RayzorBlade98/gitbunker/issues"
   },
   "homepage": "https://github.com/RayzorBlade98/gitbunker#readme",
-  "description": "",
+  "description": "CLI tool for securely storing sensitive data in a git repository by encrypting it with a secret key",
+  "keywords": [
+    "git",
+    "encryption",
+    "security",
+    "cli",
+    "storage"
+  ],
   "devDependencies": {
     "@eslint/js": "^9.33.0",
     "@types/gitignore-parser": "^0.0.3",
