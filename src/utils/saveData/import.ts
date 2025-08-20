@@ -15,7 +15,7 @@ export async function importSaveData(config: Config): Promise<void> {
     process.exit(0);
   }
 
-  const sharedLeadingPaths = countSharedLeadingPathSegments(
+  const sharedLeadingPaths = await countSharedLeadingPathSegments(
     config.includedPaths,
   );
   await Promise.all(
@@ -25,8 +25,17 @@ export async function importSaveData(config: Config): Promise<void> {
   );
 }
 
-function countSharedLeadingPathSegments(paths: string[]): number {
+async function countSharedLeadingPathSegments(
+  paths: string[],
+): Promise<number> {
   const splitPaths = paths.map((p) => p.split(sep));
+
+  // If there's only one path, the files will be copied directly into the save data directory
+  if (paths.length === 1) {
+    const stats = await stat(paths[0]!);
+    const segments = splitPaths[0]!.length;
+    return stats.isDirectory() ? segments : segments - 1;
+  }
 
   const sharedSegments = [];
   for (let i = 0; ; i++) {
