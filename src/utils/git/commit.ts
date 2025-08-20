@@ -10,10 +10,12 @@ export async function commitSaveData(config: Config): Promise<void> {
 }
 
 export async function commitAndPushEncryptedData(config: Config) {
+  console.log('Creating and pushing commit for encrypted data...');
   await simpleGit()
     .add(getEncryptedSaveDirPath(config))
     .commit(config.encryptedCommitMessage)
     .push();
+  console.log(`Successfully created and pushed commit for encrypted data`);
 }
 
 async function enterCommitMessage() {
